@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 15:32:09 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/08 16:12:39 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/08 16:29:15 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*create_fill_struct (int argc, char **argv)
 		
 	else
 	{
-		p = malloc(sizeof(t_list *) * argc - 1);
+		p = malloc(sizeof(t_list *) * (argc - 1));
 		fill(p, ++argv, argc - 1);
 	}
 }
@@ -34,14 +34,16 @@ void	fill(t_list **p, char **argv, int size)
 	t_list	*previous;
 
 	i = 0;
-	while (size--)
+	while (i < (size_t)size)
 	{
-		p[i] = malloc(sizeof(t_list))
-		p[i] -> next = p[i + 1];
-		p[i] -> previous = p[i - 1];
+		p[i] = malloc(sizeof(t_list));
+		if (i == 0)
+			p[i]->previous = NULL;
+		else
+			p[i]->previous = p[i - 1];
+		if (i > 0)
+			p[i - 1] -> next = p[i];
 		p[i++] -> val = ft_atoi(*argv++);
 	}
-	p[0] -> previus = NULL;
-	p[i] -> next = NULL;
 }
 
