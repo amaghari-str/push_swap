@@ -6,7 +6,7 @@
 /*   By: hechahbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 21:21:29 by hechahbo          #+#    #+#             */
-/*   Updated: 2026/11/19 03:20:00 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:12:37 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void	sorting_chunk(t_stack **stack_a, t_stack **stack_b, t_operations *p)
 	int	limit;
 	int	pushed;
 
-	if (is_sorted(*stack_a))
-		return ;
 	size = stack_size(*stack_a);
 	chunk_size = ft_sqrt(size);
 	limit = chunk_size;

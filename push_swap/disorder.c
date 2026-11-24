@@ -6,11 +6,39 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 19:39:28 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/24 18:49:24 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:39:32 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void    sort_three(t_stack **a, t_operations *p)
+{
+    int first;
+    int second;
+    int third;
+
+    first = (*a)->val;
+    second = (*a)->next->val;
+    third = (*a)->next->next->val;
+
+    if (first > second && second < third && first < third)
+        sa(a, p);
+    else if (first > second && second > third)
+    {
+        sa(a, p);
+        rra(a, p);
+    }
+    else if (first > second && second < third && first > third)
+        ra(a, p);
+    else if (first < second && second > third && first < third)
+    {
+        sa(a, p);
+        ra(a, p);
+    }
+    else if (first < second && second > third && first > third)
+        rra(a, p);
+}
 
 static float	compute_disorder(t_stack *stack)
 {
@@ -52,7 +80,12 @@ static void	disorder2(t_stack **stack, t_stack **b, t_operations *p)
 
 	disorder = compute_disorder(*stack);
 	p->disorder = disorder * 100;
-	if (disorder < 0.2)
+	if (stack_size(*stack) == 3)
+	{
+		sort_three(stack, p);
+		p->nonsimp++;
+	}
+	else if (disorder < 0.2)
 	{
 		p->nonsimp++;
 		simple_sort(stack, b, p);
@@ -75,8 +108,6 @@ static void	disorder2(t_stack **stack, t_stack **b, t_operations *p)
 void	disorder(t_stack **stack, t_stack **b, t_operations *p)
 {
 	p->disorder = compute_disorder(*stack) * 100;
-	if (is_sorted(*stack))
-		return ;
 	if (p->simple)
 	{
 		simple_sort(stack, b, p);
