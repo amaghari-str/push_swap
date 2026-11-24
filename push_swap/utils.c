@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 21:06:53 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/19 20:22:01 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:55:16 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	count_total_op(t_operations *p)
 
 static void	print_operations(t_operations *p)
 {
-	ft_putstr_fd("\n[bench sa:  ", 2);
+	ft_putstr_fd("\n[bench] sa:  ", 2);
 	ft_putnbr_fd(p->sa, 2);
 	ft_putstr_fd("  sb:  ", 2);
 	ft_putnbr_fd(p->sb, 2);
@@ -55,6 +55,7 @@ static void	print_operations(t_operations *p)
 	ft_putnbr_fd(p->rrb, 2);
 	ft_putstr_fd("  rrr:  ", 2);
 	ft_putnbr_fd(p->rrr, 2);
+	write(1, "\n", 2);
 }
 
 void	write_file(t_operations *p)

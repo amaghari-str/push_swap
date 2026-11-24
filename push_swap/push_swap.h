@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 12:47:23 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/24 16:00:15 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:55:36 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		stack_size(t_stack *stack);
 t_stack	**create_fill_struct(int argc, char **argv, t_operations *bench);
 t_stack	*ftt_lstlast(t_stack *lst);
 
-void free_sta_a(t_stack **p, t_operations *bench);
+void	free_sta_a(t_stack **p, t_operations *bench);
 void	sorting_chunk(t_stack **stack_a, t_stack **stack_b,
 			t_operations *p);
 void	pushing_back_to_a(t_stack **stack_a, t_stack **stack_b,

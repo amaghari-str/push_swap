@@ -6,17 +6,17 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 15:01:46 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/24 16:00:56 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:58:38 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_sta_a(t_stack **p, t_operations *bench)
+void	free_sta_a(t_stack **p, t_operations *bench)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
-	if(bench)
+	if (bench)
 		free(bench);
 	while (*p != NULL)
 	{
@@ -24,7 +24,7 @@ void free_sta_a(t_stack **p, t_operations *bench)
 		free(*p);
 		*p = temp;
 	}
-	free(p);	
+	free(p);
 }
 
 static int	check_duplicates(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 19:39:28 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/19 21:04:43 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:49:24 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static void	disorder2(t_stack **stack, t_stack **b, t_operations *p)
 
 void	disorder(t_stack **stack, t_stack **b, t_operations *p)
 {
+	p->disorder = compute_disorder(*stack) * 100;
 	if (is_sorted(*stack))
 		return ;
 	if (p->simple)

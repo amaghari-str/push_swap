@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 15:32:09 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/24 16:37:31 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:57:35 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_nomber(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if(!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i]) * 1))
+			if (!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i]) * 1))
 				return (0);
 			j++;
 		}
@@ -125,7 +125,7 @@ t_stack	**create_fill_struct(int argc, char **argv, t_operations *bench)
 	p = ft_calloc(size, sizeof(t_stack *));
 	if (!p)
 		return (NULL);
-	if(!fill(p, &argv[i], size))
+	if (!fill(p, &argv[i], size))
 	{
 		free_sta_a(p, bench);
 		return (NULL);
