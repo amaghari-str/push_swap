@@ -36,7 +36,7 @@ int	is_nomber(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i]) * 1))
+			if (!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i]) == 0))
 				return (0);
 			j++;
 		}

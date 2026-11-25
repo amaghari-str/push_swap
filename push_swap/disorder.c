@@ -18,8 +18,9 @@ static void    sort_three(t_stack **a, t_operations *p)
     int second;
     int third;
 
+
     first = (*a)->val;
-    second = (*a)->next->val;
+	second = (*a)->next->val;
     third = (*a)->next->next->val;
 
     if (first > second && second < third && first < third)
@@ -108,8 +109,8 @@ static void	disorder2(t_stack **stack, t_stack **b, t_operations *p)
 void	disorder(t_stack **stack, t_stack **b, t_operations *p)
 {
 	p->disorder = compute_disorder(*stack) * 100;
-	if (p->simple)
-	{
+	if (p->simple || stack_size(*stack) == 5)
+ 	{
 		simple_sort(stack, b, p);
 		print_or_not(p);
 	}
