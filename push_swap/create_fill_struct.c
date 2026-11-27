@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 15:32:09 by amaghari          #+#    #+#             */
-/*   Updated: 2026/11/24 18:57:35 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/11/27 16:40:59 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_nomber(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i]) == 0))
+			if (!ft_isdigit(argv[i][j]) && !(ft_atoi(argv[i])))
 				return (0);
 			j++;
 		}
